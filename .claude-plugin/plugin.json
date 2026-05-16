@@ -1,6 +1,6 @@
 {
   "name": "claudikins-automatic-context-manager",
-  "version": "1.1.2-beta",
+  "version": "1.1.3",
   "description": "Claudikins Automatic Context Manager - seamless context handoff for Claude Code",
   "author": {
     "name": "elb-pr",

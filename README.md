@@ -39,6 +39,16 @@ git clone https://github.com/elb-pr/claudikins-automatic-context-manager.git
 
 </details>
 
+### Platform override
+
+By default `install.sh` auto-detects the platform using `uname -s` (`Darwin` → `macos`; `Linux` with `zenity` → `linux-zenity`; everything else → `generic`). Set `CLAUDIKINS_PLATFORM` to skip detection:
+
+```bash
+CLAUDIKINS_PLATFORM=generic bash install.sh
+```
+
+Valid values: `macos`, `linux-zenity`, `generic`. An invalid value causes installation to fail immediately with an error — there is no silent fallback.
+
 ## How It Works
 
 ```mermaid

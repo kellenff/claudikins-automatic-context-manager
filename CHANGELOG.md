@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] - 2026-05-16
+
+### Fixed
+
+- Installer path drift: `install.sh` now resolves the platform-specific
+  `handoff-prompt.sh` from `platforms/<variant>/` instead of the removed
+  `scripts/handoff-prompt.sh`. Fresh installs no longer abort before placing
+  the SessionStart hook, skills, or statusline.
+
+### Added
+
+- `CLAUDIKINS_PLATFORM` environment variable to override platform auto-detection
+  during installation. Valid values: `macos`, `linux-zenity`, `generic`. Invalid
+  values cause installation to fail with a clear error.
+- Install breadcrumb at `~/.claude/claudikins-acm/install.log` recording the
+  selected platform variant and timestamp for each install run.
+
+### Note
+
+v1.1.0, v1.1.1-beta, and v1.1.2-beta all shipped with this broken installer.
+Users on any of those versions should re-run `install.sh` after upgrading.
+
+---
+
 ## [1.1.2-beta] - 2026-01-20
 
 ### Fixed

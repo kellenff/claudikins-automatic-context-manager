@@ -45,6 +45,37 @@ echo ""
 mkdir -p "$SCRIPTS_DIR"
 mkdir -p "$STATE_DIR"
 
+# Resolve platform variant
+if [ -n "$CLAUDIKINS_PLATFORM" ]; then
+    case "$CLAUDIKINS_PLATFORM" in
+        macos|linux-zenity|generic)
+            PLATFORM="$CLAUDIKINS_PLATFORM"
+            echo -e "${GRAY}→${RESET} Platform override: $PLATFORM"
+            ;;
+        *)
+            echo "Invalid CLAUDIKINS_PLATFORM='$CLAUDIKINS_PLATFORM'. Valid: macos, linux-zenity, generic." >&2
+            exit 1
+            ;;
+    esac
+else
+    case "$(uname -s)" in
+        Darwin)
+            PLATFORM=macos
+            ;;
+        Linux)
+            if command -v zenity >/dev/null 2>&1; then
+                PLATFORM=linux-zenity
+            else
+                PLATFORM=generic
+            fi
+            ;;
+        *)
+            PLATFORM=generic
+            ;;
+    esac
+    echo -e "${GRAY}→${RESET} Auto-detected platform: $PLATFORM"
+fi
+
 # Backup existing handoff script if present
 if [ -f "$SCRIPTS_DIR/handoff-prompt.sh" ]; then
     echo -e "${GRAY}→${RESET} Backing up existing handoff-prompt.sh"
@@ -53,11 +84,12 @@ fi
 
 # Copy the handoff script
 echo -e "${GRAY}→${RESET} Installing handoff-prompt.sh"
-if ! cp "$SCRIPT_DIR/scripts/handoff-prompt.sh" "$SCRIPTS_DIR/"; then
+if ! cp "$SCRIPT_DIR/platforms/$PLATFORM/handoff-prompt.sh" "$SCRIPTS_DIR/handoff-prompt.sh"; then
     echo -e "${PINK}✗${RESET} Failed to copy script"
     exit 1
 fi
 chmod +x "$SCRIPTS_DIR/handoff-prompt.sh"
+echo "$(date -u +%FT%TZ) platform=$PLATFORM" >> "$STATE_DIR/install.log"
 echo -e "${GREEN}✓${RESET} Script installed"
 
 # Install SessionStart hook
