@@ -1,6 +1,6 @@
 ![Claudikins ACM Banner](assets/banner.png)
 
-> **v1.1.1-beta** - Native hooks implementation. This is beta software - expect rough edges. Please [report bugs here](https://github.com/elb-pr/claudikins-automatic-context-manager/issues).
+> **v1.1.3** - Installer path fix and platform override. Please [report bugs here](https://github.com/elb-pr/claudikins-automatic-context-manager/issues).
 
 **Automatic context management for Claude Code.** Monitors token usage and triggers at 60% context saturation, prompting for session handoff with an auto-generated summary that opens in a fresh session.
 

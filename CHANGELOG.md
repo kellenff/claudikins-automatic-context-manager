@@ -22,10 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Install breadcrumb at `~/.claude/claudikins-acm/install.log` recording the
   selected platform variant and timestamp for each install run.
 
-### Note
-
-v1.1.0, v1.1.1-beta, and v1.1.2-beta all shipped with this broken installer.
-Users on any of those versions should re-run `install.sh` after upgrading.
+> **Note:** v1.1.0, v1.1.1-beta, and v1.1.2-beta all shipped with this broken
+> installer. Users on any of those versions should re-run `install.sh` after
+> upgrading.
 
 ---
 
