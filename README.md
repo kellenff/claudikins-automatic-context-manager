@@ -1,6 +1,6 @@
 ![Claudikins ACM Banner](assets/banner.png)
 
-> **v1.1.3** - Installer path fix and platform override. Please [report bugs here](https://github.com/elb-pr/claudikins-automatic-context-manager/issues).
+> **v1.1.3** - Installer path fix and platform override. Please [report bugs here](https://github.com/kellenff/claudikins-automatic-context-manager/issues).
 
 **Automatic context management for Claude Code.** Monitors token usage and triggers at 60% context saturation, prompting for session handoff with an auto-generated summary that opens in a fresh session.
 
@@ -26,14 +26,14 @@ LLM attention weights distribute across all context tokens. As context fills, pe
 
 ### Claude Code
 
-1. `/plugin marketplace add elb-pr/claudikins-marketplace`
+1. `/plugin marketplace add kellenff/claudikins-marketplace`
 2. `/plugin` → navigate to Claudikins Marketplace → install
 
 <details>
 <summary>Manual</summary>
 
 ```bash
-git clone https://github.com/elb-pr/claudikins-automatic-context-manager.git
+git clone https://github.com/kellenff/claudikins-automatic-context-manager.git
 ./install.sh
 ```
 
