@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.4] - 2026-05-16
+
+### Added
+
+- `/acm:install` slash command — runs the installer from within Claude Code.
+  Optionally accepts a platform argument (`macos`, `linux-zenity`, `generic`)
+  that maps to `CLAUDIKINS_PLATFORM`.
+- `/acm:uninstall` slash command — runs the uninstaller. Note that
+  `uninstall.sh` is interactive and will prompt for y/N confirmation.
+- `/acm:upgrade` slash command — alias for `/acm:install`. Use this after a
+  plugin update to re-apply the installer (which copies the latest
+  `handoff-prompt.sh` variant into `~/.claude/scripts/`).
+
+---
+
 ## [1.1.3] - 2026-05-16
 
 ### Fixed
