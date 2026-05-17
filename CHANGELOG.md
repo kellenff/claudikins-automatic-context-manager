@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.5] - 2026-05-16
+
+### Fixed
+
+- Slash commands shipped in v1.1.4 (`install`, `uninstall`, `upgrade`) did not
+  register because their `name:` frontmatter used a short-form namespace
+  (`acm:install` etc.) that Claude Code rejects. Renamed to the full plugin
+  namespace (`claudikins-automatic-context-manager:install` etc.) matching
+  the precedent of `manual-handoff`. Users on v1.1.4 should run
+  `/claudikins-automatic-context-manager:upgrade` (or just reinstall via the
+  marketplace) to pick up the working commands.
+
+---
+
 ## [1.1.4] - 2026-05-16
 
 ### Added

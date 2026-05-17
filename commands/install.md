@@ -1,5 +1,5 @@
 ---
-name: acm:install
+name: claudikins-automatic-context-manager:install
 description: Install Claudikins ACM (run install.sh) — optionally pass platform: macos | linux-zenity | generic
 argument-hint: "[platform]"
 allowed-tools:

@@ -1,5 +1,5 @@
 ---
-name: acm:uninstall
+name: claudikins-automatic-context-manager:uninstall
 description: Uninstall Claudikins ACM (run uninstall.sh) — will prompt for y/N confirmation
 allowed-tools:
   - Bash

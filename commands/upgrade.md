@@ -1,5 +1,5 @@
 ---
-name: acm:upgrade
+name: claudikins-automatic-context-manager:upgrade
 description: Upgrade Claudikins ACM by re-running the installer — optionally pass platform
 argument-hint: "[platform]"
 allowed-tools:

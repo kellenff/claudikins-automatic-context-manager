@@ -1,6 +1,6 @@
 ![Claudikins ACM Banner](assets/banner.png)
 
-> **v1.1.4** - Slash commands for install / uninstall / upgrade. Please [report bugs here](https://github.com/kellenff/claudikins-automatic-context-manager/issues).
+> **v1.1.5** - Slash commands registered under full plugin namespace. Please [report bugs here](https://github.com/kellenff/claudikins-automatic-context-manager/issues).
 
 **Automatic context management for Claude Code.** Monitors token usage and triggers at 60% context saturation, prompting for session handoff with an auto-generated summary that opens in a fresh session.
 
@@ -41,13 +41,15 @@ git clone https://github.com/kellenff/claudikins-automatic-context-manager.git
 
 ### Slash commands
 
-Once installed, three slash commands are available inside Claude Code:
+Three slash commands are available inside Claude Code:
 
-| Command                   | Purpose                                                                                                    |
-| ------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `/acm:install [platform]` | Run the installer. Optionally pass a platform (`macos`, `linux-zenity`, `generic`) to skip auto-detection. |
-| `/acm:uninstall`          | Run the uninstaller. The script will prompt for y/N confirmation.                                          |
-| `/acm:upgrade [platform]` | Re-run the installer after a plugin update. Use this if you were on v1.1.0, v1.1.1-beta, or v1.1.2-beta.   |
+| Command                                                    | Purpose                                                                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `/claudikins-automatic-context-manager:install [platform]` | Run the installer. Optionally pass a platform (`macos`, `linux-zenity`, `generic`) to skip auto-detection. |
+| `/claudikins-automatic-context-manager:uninstall`          | Run the uninstaller. The script will prompt for y/N confirmation.                                          |
+| `/claudikins-automatic-context-manager:upgrade [platform]` | Re-run the installer after a plugin update. Use this if you were on v1.1.0, v1.1.1-beta, or v1.1.2-beta.   |
+
+Claude Code's tab-completion shortens these — start typing `/claudikins` and pick from the menu.
 
 ### Platform override
 
